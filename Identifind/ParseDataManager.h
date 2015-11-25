@@ -25,5 +25,6 @@
          withClues:(NSString*)clues
            withLat:(float)latitude
           withLong:(float)longitude;
+- (void) scorePoints:(int)points;
 
 @end

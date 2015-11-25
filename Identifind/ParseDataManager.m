@@ -34,6 +34,7 @@
     newUser.username = username;
     newUser.email = email;
     newUser.password = password;
+    [newUser setObject:[NSNumber numberWithInt:0] forKey:@"Points"];
     //check if signup was a success
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (!succeeded) {
@@ -65,6 +66,17 @@
             NSLog(@"This got called. So I got that going for me. Which is nice.");
         }
     }];
+}
+
+- (void) scorePoints:(int)points {
+    NSNumber* prev = [[PFUser currentUser] objectForKey:@"Points"];
+    if (prev == nil) {
+        NSLog(@"Points found null");
+        
+    }
+    NSNumber* new = [NSNumber numberWithInt:[prev intValue] + points];
+    [[PFUser currentUser]setObject:new forKey:@"Points"];
+    
 }
 
 @end

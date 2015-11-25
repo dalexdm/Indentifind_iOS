@@ -39,6 +39,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self loadPuzzles];
+    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
+    else self.title = @"No user logged in!";
 }
 
 - (void)didReceiveMemoryWarning {

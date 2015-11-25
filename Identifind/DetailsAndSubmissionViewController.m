@@ -48,7 +48,9 @@
     [[ParseDataManager sharedManager] postImage:file fromUser:@"No Users Yet" withTitle:_titleField.text withClues:_cluesField.text withLat:_latitude withLong:_longitude];
     _titleField.text = @"";
     _cluesField.text = @"";
+    [[ParseDataManager sharedManager] scorePoints:1];
     [self.navigationController popToRootViewControllerAnimated:YES];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
