@@ -19,6 +19,7 @@
 		1109470D1BFA908F0018A134 /* ChooseCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1109470C1BFA908F0018A134 /* ChooseCategoryViewController.m */; };
 		110947101BFA91390018A134 /* PuzzleBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1109470F1BFA91390018A134 /* PuzzleBrowserTableViewController.m */; };
 		110947131BFAA28D0018A134 /* PuzzleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110947121BFAA28D0018A134 /* PuzzleDetailsViewController.m */; };
+		1144EE551C05714000EF42DF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144EE541C05714000EF42DF /* SignUpViewController.m */; };
 		11464C101BFBC3C30053D328 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11464C0F1BFBC3C30053D328 /* CoreLocation.framework */; };
 		1183AB9A1BFC3A8A0016E6DF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1183AB991BFC3A8A0016E6DF /* ParseUI.framework */; };
 		1199465F1BFB7F1100A5ED30 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1199465D1BFB7F1100A5ED30 /* Bolts.framework */; };
@@ -77,6 +78,8 @@
 		1109470F1BFA91390018A134 /* PuzzleBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleBrowserTableViewController.m; sourceTree = "<group>"; };
 		110947111BFAA28D0018A134 /* PuzzleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleDetailsViewController.h; sourceTree = "<group>"; };
 		110947121BFAA28D0018A134 /* PuzzleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleDetailsViewController.m; sourceTree = "<group>"; };
+		1144EE531C05714000EF42DF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		1144EE541C05714000EF42DF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		11464C0F1BFBC3C30053D328 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1183AB991BFC3A8A0016E6DF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		1199465D1BFB7F1100A5ED30 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Identifind/Bolts.framework; sourceTree = "<group>"; };
@@ -168,6 +171,8 @@
 		110946CB1BFA8AC20018A134 /* Identifind */ = {
 			isa = PBXGroup;
 			children = (
+				1144EE531C05714000EF42DF /* SignUpViewController.h */,
+				1144EE541C05714000EF42DF /* SignUpViewController.m */,
 				119946731BFB869400A5ED30 /* ParseDataManager.h */,
 				119946741BFB869400A5ED30 /* ParseDataManager.m */,
 				110947121BFAA28D0018A134 /* PuzzleDetailsViewController.m */,
@@ -356,6 +361,7 @@
 				1109470A1BFA8FF20018A134 /* DetailsAndSubmissionViewController.m in Sources */,
 				1109470D1BFA908F0018A134 /* ChooseCategoryViewController.m in Sources */,
 				110947131BFAA28D0018A134 /* PuzzleDetailsViewController.m in Sources */,
+				1144EE551C05714000EF42DF /* SignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

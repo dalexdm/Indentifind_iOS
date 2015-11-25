@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import "PuzzleDetailsViewController.h"
+#import "ParseDataManager.h"
 
 @interface PuzzleBrowserTableViewController ()
 //@property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -32,6 +33,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -43,7 +46,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)filterChosen:(id)sender {
+}
+
 - (IBAction)startNewPuzzle:(id)sender {
+    if (![[ParseDataManager sharedManager] isUserLoggedIn]) {
+        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
+        return;
+    }
     [self performSegueWithIdentifier:@"newPuzzle" sender:self];
 }
 
@@ -69,6 +79,10 @@
     return _puzzles.count;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (![[ParseDataManager sharedManager] isUserLoggedIn]) {
+        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
+        return;
+    }
     _selectedPuzzle = (PFObject *) _puzzles[indexPath.row];
     [self performSegueWithIdentifier:@"getDetails" sender:self];
 }
