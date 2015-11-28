@@ -11,6 +11,8 @@
 
 @interface ParseDataManager : NSObject
 
+@property (nonatomic) int filterType;
+
 + (ParseDataManager *)sharedManager;
 
 - (BOOL)isUserLoggedIn;

@@ -345,12 +345,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Un2-pm-4Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="416"/>
+            <point key="canvasLocation" x="1489" y="354"/>
         </scene>
         <!--Puzzle Details-->
         <scene sceneID="8xq-fc-wuZ">
             <objects>
-                <viewController title="Puzzle Details" id="d1q-b6-ykE" customClass="DetailsAndSubmissionViewController" sceneMemberID="viewController">
+                <viewController title="Puzzle Details" id="d1q-b6-ykE" customClass="PuzzleDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gd3-t5-7Sz"/>
                         <viewControllerLayoutGuide type="bottom" id="uU7-J0-SMQ"/>

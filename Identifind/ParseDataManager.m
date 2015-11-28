@@ -15,6 +15,7 @@
     static dispatch_once_t token;
     dispatch_once(&token, ^{
         obj = [[ParseDataManager alloc] init];
+        obj.filterType = 0;
         /// TODO: Any other setup you'd like to do.
     });
     return obj;
@@ -57,6 +58,8 @@
     [puzzle setObject:title forKey:@"Title"];
     [puzzle setObject:clues forKey:@"Clues"];
     [puzzle setObject:image forKey:@"Image"];
+    [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Views"];
+    [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Difficulty"];
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];
     [puzzle saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -76,6 +79,13 @@
     }
     NSNumber* new = [NSNumber numberWithInt:[prev intValue] + points];
     [[PFUser currentUser]setObject:new forKey:@"Points"];
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (!succeeded) {
+            NSLog(@"%@",[error localizedDescription]);
+        } else {
+            NSLog(@"This got called. So I got that going for me. Which is nice.");
+        }
+    }];
     
 }
 

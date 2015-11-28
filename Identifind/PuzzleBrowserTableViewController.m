@@ -15,7 +15,6 @@
 @interface PuzzleBrowserTableViewController ()
 //@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *puzzles;
-
 @property PFObject *selectedPuzzle;
 
 
@@ -39,7 +38,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self loadPuzzles];
-    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
+    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@ Points", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
     else self.title = @"No user logged in!";
 }
 
@@ -61,6 +60,17 @@
 
 -(void)loadPuzzles {
     PFQuery *query = [PFQuery queryWithClassName:@"Puzzle"];
+    switch ([ParseDataManager sharedManager].filterType) {
+        case 0:
+            [query orderByDescending:@"createdAt"];
+            break;
+        case 1:
+            [query orderByAscending:@"createdAt"];
+            break;
+        default:
+            [query orderByDescending:@"createdAt"];
+            break;
+    }
     [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (objects.count != _puzzles.count) {
