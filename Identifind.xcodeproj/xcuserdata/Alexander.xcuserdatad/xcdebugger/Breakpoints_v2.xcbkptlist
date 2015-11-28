@@ -161,6 +161,38 @@
             endingLineNumber = "83"
             landmarkName = "-scorePoints:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ParseDataManager scorePoints:]"
+                  moduleName = "Identifind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexander/Documents/Past%20Coding%20Projects/XCode/Identifind/Identifind/ParseDataManager.m"
+                  timestampString = "470375225.32004"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[ParseDataManager scorePoints:]_block_invoke"
+                  moduleName = "Identifind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alexander/Documents/Past%20Coding%20Projects/XCode/Identifind/Identifind/ParseDataManager.m"
+                  timestampString = "470375225.320352"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

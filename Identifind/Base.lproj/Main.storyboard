@@ -335,67 +335,54 @@
         <scene sceneID="xwx-iT-WE2">
             <objects>
                 <tableViewController title="Available Puzzles" id="jIN-ms-PTU" customClass="PuzzleBrowserTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" id="XAF-8u-71n">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="XAF-8u-71n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="124" id="cGu-pG-dz9">
-                                <rect key="frame" x="0.0" y="92" width="600" height="124"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="88" id="cGu-pG-dz9">
+                                <rect key="frame" x="0.0" y="92" width="320" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cGu-pG-dz9" id="3GZ-DA-pEu">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="123.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSW-b7-82N" userLabel="pfimg" customClass="PFImageView">
-                                            <rect key="frame" x="8" y="8" width="115" height="108.5"/>
+                                        <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VSW-b7-82N" userLabel="pfimg" customClass="PFImageView">
+                                            <rect key="frame" x="8" y="8" width="75" height="75.5"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="349" id="giK-SR-1vY"/>
-                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Puzzle_Title(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-3q-ohw">
-                                            <rect key="frame" x="146" y="15" width="370" height="37"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puzzle_Title(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-3q-ohw">
+                                            <rect key="frame" x="91" y="8" width="370" height="24"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="cXG-TE-Gwv"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by USER(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShB-rM-grv">
-                                            <rect key="frame" x="146" y="55" width="288" height="21"/>
+                                            <rect key="frame" x="91" y="29" width="288" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty: (null)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-J6-eec">
-                                            <rect key="frame" x="470" y="94" width="116" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Views: (null)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppn-QP-AX3">
-                                            <rect key="frame" x="308" y="94" width="110" height="21"/>
+                                            <rect key="frame" x="79" y="62" width="110" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty: (null)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-J6-eec">
+                                            <rect key="frame" x="196" y="62" width="116" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
-                                    <constraints>
-                                        <constraint firstItem="ggR-3q-ohw" firstAttribute="centerX" secondItem="3GZ-DA-pEu" secondAttribute="centerX" id="IFP-dg-2oS"/>
-                                        <constraint firstItem="VSW-b7-82N" firstAttribute="centerX" secondItem="ggR-3q-ohw" secondAttribute="centerX" id="STr-oj-HoM"/>
-                                        <constraint firstItem="ggR-3q-ohw" firstAttribute="top" secondItem="3GZ-DA-pEu" secondAttribute="topMargin" id="XJZ-PW-6dn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="VSW-b7-82N" secondAttribute="bottom" constant="12.5" id="jXf-vN-iZL"/>
-                                        <constraint firstItem="VSW-b7-82N" firstAttribute="top" secondItem="ggR-3q-ohw" secondAttribute="bottom" constant="11" id="zTD-2Y-nW3"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -419,6 +406,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="XAF-8u-71n" id="lht-ct-MXr"/>
                         <segue destination="d1q-b6-ykE" kind="show" identifier="getDetails" id="lqd-ez-t0n"/>
@@ -428,7 +416,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Un2-pm-4Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="354"/>
+            <point key="canvasLocation" x="1497" y="354"/>
         </scene>
         <!--Puzzle Details-->
         <scene sceneID="8xq-fc-wuZ">
@@ -439,15 +427,15 @@
                         <viewControllerLayoutGuide type="bottom" id="uU7-J0-SMQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oH6-cF-fqo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-m3-hY4" customClass="PFImageView">
-                                <rect key="frame" x="20" y="72" width="560" height="331"/>
+                                <rect key="frame" x="16" y="72" width="288" height="299"/>
                                 <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11/20 by LaLaLauren&lt;36969" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0C2-B2-V8F">
-                                <rect key="frame" x="332" y="417" width="248" height="21"/>
+                                <rect key="frame" x="56" y="385" width="248" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="248" id="UGu-Zd-A7F"/>
@@ -457,7 +445,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lip Gloss Poppin'" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-yT-dCy">
-                                <rect key="frame" x="20" y="417" width="132" height="21"/>
+                                <rect key="frame" x="16" y="385" width="132" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="gJ4-89-P8j"/>
@@ -472,7 +460,7 @@
                                 <state key="normal" title="Solve It"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
-                                <rect key="frame" x="20" y="446" width="560" height="97"/>
+                                <rect key="frame" x="16" y="414" width="288" height="97"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
