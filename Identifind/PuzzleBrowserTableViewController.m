@@ -129,7 +129,7 @@
     NSLog(@"%@", [self.puzzles[0] objectForKey:@"Title"]);
     if ([segue.identifier isEqualToString:@"getDetails"]) {
         PuzzleDetailsViewController *pdvc = (PuzzleDetailsViewController *)segue.destinationViewController;
-        //pdvc.puzzle = _selectedPuzzle;
+        pdvc.puzzle = _selectedPuzzle;
     }
 }
 

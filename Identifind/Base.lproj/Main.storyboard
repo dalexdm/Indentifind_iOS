@@ -442,7 +442,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-m3-hY4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-m3-hY4" customClass="PFImageView">
                                 <rect key="frame" x="20" y="72" width="560" height="331"/>
                                 <animations/>
                             </imageView>
@@ -456,16 +456,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
-                                <rect key="frame" x="20" y="446" width="560" height="97"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="97" id="EN4-nU-1jM"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lip Gloss Poppin'" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-yT-dCy">
                                 <rect key="frame" x="20" y="417" width="132" height="21"/>
                                 <animations/>
@@ -476,6 +466,24 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Xe-Ou-kBM">
+                                <rect key="frame" x="275" y="513" width="51" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Solve It"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
+                                <rect key="frame" x="20" y="446" width="560" height="97"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="EN4-nU-1jM"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -494,6 +502,12 @@
                             <constraint firstItem="ka9-6e-6w8" firstAttribute="top" secondItem="hMG-yT-dCy" secondAttribute="bottom" constant="8" symbolic="YES" id="yHR-4G-9tM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clueField" destination="ka9-6e-6w8" id="5bx-AW-xMR"/>
+                        <outlet property="imgView" destination="1qF-m3-hY4" id="9o4-Lh-LK7"/>
+                        <outlet property="titleText" destination="hMG-yT-dCy" id="i7K-oJ-OQb"/>
+                        <outlet property="userText" destination="0C2-B2-V8F" id="ZJU-wv-Qsy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svb-D8-6VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

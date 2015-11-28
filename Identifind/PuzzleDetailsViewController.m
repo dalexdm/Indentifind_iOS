@@ -7,8 +7,13 @@
 //
 
 #import "PuzzleDetailsViewController.h"
+#import <ParseUI/ParseUI.h>
 
 @interface PuzzleDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleText;
+@property (weak, nonatomic) IBOutlet PFImageView *imgView;
+@property (weak, nonatomic) IBOutlet UITextView *clueField;
+@property (weak, nonatomic) IBOutlet UILabel *userText;
 
 @end
 
@@ -17,6 +22,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _titleText.text = [_puzzle objectForKey:@"Title"];
+    //img
+    PFImageView *pfimg = _imgView;
+    pfimg.image = [UIImage imageNamed:@""];
+    pfimg.file = (PFFile *)[_puzzle objectForKey:@"Image"];
+    _clueField.text = [_puzzle objectForKey:@"Clues"];
+    _userText.text = [_puzzle objectForKey:@"User"];
+    NSNumber *num = [_puzzle objectForKey:@"Viewed"];
+    [_puzzle setObject:[NSNumber numberWithInt:[num integerValue] + 1] forKey:@"Viewed"];
+    [_puzzle saveInBackground];
+    [pfimg loadInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
