@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Identifind/DetailsAndSubmissionViewController.m"
@@ -150,7 +150,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Identifind/ParseDataManager.m"
@@ -163,14 +163,14 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[ParseDataManager scorePoints:]"
                   moduleName = "Identifind"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Alexander/Documents/Past%20Coding%20Projects/XCode/Identifind/Identifind/ParseDataManager.m"
-                  timestampString = "470380116.696715"
+                  timestampString = "470441246.449703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -178,14 +178,14 @@
                   offsetFromSymbolStart = "340">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "__32-[ParseDataManager scorePoints:]_block_invoke"
                   moduleName = "Identifind"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Alexander/Documents/Past%20Coding%20Projects/XCode/Identifind/Identifind/ParseDataManager.m"
-                  timestampString = "470380116.697055"
+                  timestampString = "470441246.450037"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"

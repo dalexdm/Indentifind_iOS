@@ -22,6 +22,8 @@
 		1144EE551C05714000EF42DF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1144EE541C05714000EF42DF /* SignUpViewController.m */; };
 		11464C101BFBC3C30053D328 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11464C0F1BFBC3C30053D328 /* CoreLocation.framework */; };
 		1183AB9A1BFC3A8A0016E6DF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1183AB991BFC3A8A0016E6DF /* ParseUI.framework */; };
+		1185E1131C0A638600203815 /* SolveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1185E1121C0A638600203815 /* SolveViewController.m */; };
+		1185E1161C0A63A600203815 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1185E1151C0A63A600203815 /* ResultsViewController.m */; };
 		1199465F1BFB7F1100A5ED30 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1199465D1BFB7F1100A5ED30 /* Bolts.framework */; };
 		119946601BFB7F1100A5ED30 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1199465E1BFB7F1100A5ED30 /* Parse.framework */; };
 		119946621BFB7F3200A5ED30 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119946611BFB7F3200A5ED30 /* AudioToolbox.framework */; };
@@ -82,6 +84,10 @@
 		1144EE541C05714000EF42DF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		11464C0F1BFBC3C30053D328 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1183AB991BFC3A8A0016E6DF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		1185E1111C0A638600203815 /* SolveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolveViewController.h; sourceTree = "<group>"; };
+		1185E1121C0A638600203815 /* SolveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolveViewController.m; sourceTree = "<group>"; };
+		1185E1141C0A63A600203815 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		1185E1151C0A63A600203815 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 		1199465D1BFB7F1100A5ED30 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Identifind/Bolts.framework; sourceTree = "<group>"; };
 		1199465E1BFB7F1100A5ED30 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Identifind/Parse.framework; sourceTree = "<group>"; };
 		119946611BFB7F3200A5ED30 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -187,6 +193,10 @@
 				1109470F1BFA91390018A134 /* PuzzleBrowserTableViewController.m */,
 				110946CF1BFA8AC20018A134 /* AppDelegate.h */,
 				110946D01BFA8AC20018A134 /* AppDelegate.m */,
+				1185E1111C0A638600203815 /* SolveViewController.h */,
+				1185E1121C0A638600203815 /* SolveViewController.m */,
+				1185E1141C0A63A600203815 /* ResultsViewController.h */,
+				1185E1151C0A63A600203815 /* ResultsViewController.m */,
 				110946D81BFA8AC20018A134 /* Main.storyboard */,
 				110946DB1BFA8AC20018A134 /* Assets.xcassets */,
 				110946DD1BFA8AC20018A134 /* LaunchScreen.storyboard */,
@@ -357,6 +367,8 @@
 				110946D11BFA8AC20018A134 /* AppDelegate.m in Sources */,
 				110946CE1BFA8AC20018A134 /* main.m in Sources */,
 				119946751BFB869400A5ED30 /* ParseDataManager.m in Sources */,
+				1185E1131C0A638600203815 /* SolveViewController.m in Sources */,
+				1185E1161C0A63A600203815 /* ResultsViewController.m in Sources */,
 				110947041BFA8FAD0018A134 /* GetPhotoViewController.m in Sources */,
 				1109470A1BFA8FF20018A134 /* DetailsAndSubmissionViewController.m in Sources */,
 				1109470D1BFA908F0018A134 /* ChooseCategoryViewController.m in Sources */,

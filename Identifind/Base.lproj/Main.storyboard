@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="2132" y="-288"/>
         </scene>
-        <!--Choose a Category-->
+        <!--Choose a filter!-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="Choose a Category" id="8rJ-Kc-sve" customClass="ChooseCategoryViewController" sceneMemberID="viewController">
+                <viewController title="Choose a filter!" id="8rJ-Kc-sve" customClass="ChooseCategoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -169,12 +169,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="1136"/>
+            <point key="canvasLocation" x="1497" y="1060"/>
         </scene>
-        <!--Puzzle Details-->
+        <!--Title and Clues-->
         <scene sceneID="cGj-1Q-aUf">
             <objects>
-                <viewController title="Puzzle Details" id="q39-yb-KMh" customClass="DetailsAndSubmissionViewController" sceneMemberID="viewController">
+                <viewController title="Title and Clues" id="q39-yb-KMh" customClass="DetailsAndSubmissionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kgI-7U-oFZ"/>
                         <viewControllerLayoutGuide type="bottom" id="VtF-18-KFE"/>
@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="2558" y="-288"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Create an account!-->
         <scene sceneID="dAD-iM-f6j">
             <objects>
-                <viewController id="AXY-mH-vT1" customClass="SignUpViewController" sceneMemberID="viewController">
+                <viewController title="Create an account!" id="AXY-mH-vT1" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lnE-Zg-rv7"/>
                         <viewControllerLayoutGuide type="bottom" id="uOB-tq-Vbp"/>
@@ -429,7 +429,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-m3-hY4" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="take_button" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-m3-hY4" customClass="PFImageView">
                                 <rect key="frame" x="16" y="72" width="288" height="299"/>
                                 <animations/>
                             </imageView>
@@ -475,11 +475,56 @@
                         <outlet property="imgView" destination="1qF-m3-hY4" id="9o4-Lh-LK7"/>
                         <outlet property="titleText" destination="hMG-yT-dCy" id="i7K-oJ-OQb"/>
                         <outlet property="userText" destination="0C2-B2-V8F" id="ZJU-wv-Qsy"/>
+                        <segue destination="7Gz-iU-vcV" kind="show" identifier="solve" id="uON-u9-w7l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svb-D8-6VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2272" y="354"/>
+            <point key="canvasLocation" x="2132" y="354"/>
+        </scene>
+        <!--Guess the location!-->
+        <scene sceneID="4MQ-Sj-RNn">
+            <objects>
+                <viewController title="Guess the location!" id="7Gz-iU-vcV" customClass="SolveViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eB4-nm-MB8"/>
+                        <viewControllerLayoutGuide type="bottom" id="tjg-SM-Y3j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0UE-To-1q3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-Td-U1n">
+                                <rect key="frame" x="10" y="117" width="300" height="375"/>
+                                <animations/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2D-yB-lpB">
+                                <rect key="frame" x="20" y="500" width="280" height="48"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Submit Guess!">
+                                    <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap and hold to guess a location!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjS-Cq-Bul">
+                                <rect key="frame" x="10" y="88" width="300" height="28"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="8mL-Mh-Ba4" kind="show" identifier="win" id="hdx-Xo-7I5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znF-ew-FfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2558" y="354"/>
         </scene>
         <!--Second-->
         <scene sceneID="Sdt-pu-2pt">
@@ -487,6 +532,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NDI-pu-Eyc" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPH-Tf-Q9L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -499,12 +545,87 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5fB-Be-1Ln" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="982" y="354"/>
+        </scene>
+        <!--Results-->
+        <scene sceneID="gGd-hy-wtj">
+            <objects>
+                <viewController title="Results" id="8mL-Mh-Ba4" customClass="ResultsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tmQ-I9-L0F"/>
+                        <viewControllerLayoutGuide type="bottom" id="UHs-Mw-RvD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jau-DN-6wd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="YJQ-Lp-7GK">
+                                <rect key="frame" x="20" y="140" width="280" height="280"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points Received: ø" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyq-4M-pP7">
+                                <rect key="frame" x="80" y="434" width="161" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Distance from location: ø" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z80-o6-n0D">
+                                <rect key="frame" x="58" y="460" width="204" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amR-Yf-YUS">
+                                <rect key="frame" x="20" y="500" width="280" height="48"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Find new puzzles!">
+                                    <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You got it!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIp-ID-NCU">
+                                <rect key="frame" x="76" y="78" width="168" height="54"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcy-8x-lxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2976" y="354"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ilk-qW-fbP">
+            <objects>
+                <viewController id="77r-2P-p4w" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aaP-OH-xDG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Juv-rD-csT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Zg-5R-noB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fmy-5Q-gZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
         <image name="make_button" width="562" height="562"/>
         <image name="second" width="30" height="30"/>
+        <image name="settings" width="562" height="562"/>
         <image name="take_button" width="441" height="423"/>
     </resources>
 </document>

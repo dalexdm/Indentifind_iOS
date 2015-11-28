@@ -64,11 +64,8 @@
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];
     [puzzle saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (!succeeded) {
+        if (!succeeded)
             NSLog(@"%@",[error localizedDescription]);
-        } else {
-            NSLog(@"This got called. So I got that going for me. Which is nice.");
-        }
     }];
 }
 
@@ -81,11 +78,8 @@
     NSNumber* new = [NSNumber numberWithInt:[prev intValue] + points];
     [[PFUser currentUser]setObject:new forKey:@"Points"];
     [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (!succeeded) {
+        if (!succeeded)
             NSLog(@"%@",[error localizedDescription]);
-        } else {
-            NSLog(@"This got called. So I got that going for me. Which is nice.");
-        }
     }];
     
 }

@@ -59,7 +59,6 @@
 }
 
 -(void)loadPuzzles {
-    NSLog(@"%d", [ParseDataManager sharedManager].filterType);
     PFQuery *query = [PFQuery queryWithClassName:@"Puzzle"];
     switch ([ParseDataManager sharedManager].filterType) {
         case 0:
@@ -74,7 +73,6 @@
     }
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             self.puzzles = [objects mutableCopy];
-            NSLog(@"%@", [self.puzzles[0] objectForKey:@"Title"]);
             [self.tableView reloadData];
     }];
 }
@@ -136,10 +134,13 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"%@", [self.puzzles[0] objectForKey:@"Title"]);
     if ([segue.identifier isEqualToString:@"getDetails"]) {
         PuzzleDetailsViewController *pdvc = (PuzzleDetailsViewController *)segue.destinationViewController;
         pdvc.puzzle = _selectedPuzzle;
+        NSNumber *prev = [_selectedPuzzle objectForKey:@"Views"];
+        NSNumber *newz = [NSNumber numberWithInt:1 + [prev intValue]];
+        [_selectedPuzzle setObject:newz forKey:@"Views"];
+        [_selectedPuzzle saveInBackground];
     }
 }
 
