@@ -387,6 +387,9 @@
                                 <rect key="frame" x="275" y="513" width="51" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Solve It"/>
+                                <connections>
+                                    <action selector="solveButtonPressed:" destination="d1q-b6-ykE" eventType="touchUpInside" id="VSH-dx-4we"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
                                 <rect key="frame" x="20" y="446" width="560" height="97"/>
@@ -424,11 +427,42 @@
                         <outlet property="imgView" destination="1qF-m3-hY4" id="9o4-Lh-LK7"/>
                         <outlet property="titleText" destination="hMG-yT-dCy" id="i7K-oJ-OQb"/>
                         <outlet property="userText" destination="0C2-B2-V8F" id="ZJU-wv-Qsy"/>
+                        <segue destination="77K-DO-50A" kind="show" identifier="toSolve" id="a5a-5e-BWm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svb-D8-6VV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2272" y="354"/>
+        </scene>
+        <!--Solving View Controller-->
+        <scene sceneID="moa-Ze-XgN">
+            <objects>
+                <viewController id="77K-DO-50A" customClass="SolvingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5iq-f4-KkR"/>
+                        <viewControllerLayoutGuide type="bottom" id="oZU-Nh-Xmu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P3M-Pp-0Fs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v0d-zo-0Vq">
+                                <rect key="frame" x="0.0" y="125" width="600" height="349"/>
+                                <animations/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3e-ew-H6A">
+                                <rect key="frame" x="239" y="512" width="123" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Confirm Selection"/>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SIp-eX-Pzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3000" y="354"/>
         </scene>
         <!--Second-->
         <scene sceneID="Sdt-pu-2pt">

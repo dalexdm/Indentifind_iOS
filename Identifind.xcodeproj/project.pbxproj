@@ -34,6 +34,7 @@
 		119946701BFB7F7800A5ED30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1199466F1BFB7F7800A5ED30 /* libz.tbd */; };
 		119946721BFB7F8D00A5ED30 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 119946711BFB7F8D00A5ED30 /* libsqlite3.tbd */; };
 		119946751BFB869400A5ED30 /* ParseDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 119946741BFB869400A5ED30 /* ParseDataManager.m */; };
+		5BDF76331C096D1000546406 /* SolvingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BDF76321C096D1000546406 /* SolvingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		119946711BFB7F8D00A5ED30 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		119946731BFB869400A5ED30 /* ParseDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDataManager.h; sourceTree = "<group>"; };
 		119946741BFB869400A5ED30 /* ParseDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDataManager.m; sourceTree = "<group>"; };
+		5BDF76311C096D1000546406 /* SolvingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolvingViewController.h; sourceTree = "<group>"; };
+		5BDF76321C096D1000546406 /* SolvingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolvingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				110946CF1BFA8AC20018A134 /* AppDelegate.h */,
 				110946D01BFA8AC20018A134 /* AppDelegate.m */,
 				110946D81BFA8AC20018A134 /* Main.storyboard */,
+				5BDF76311C096D1000546406 /* SolvingViewController.h */,
+				5BDF76321C096D1000546406 /* SolvingViewController.m */,
 				110946DB1BFA8AC20018A134 /* Assets.xcassets */,
 				110946DD1BFA8AC20018A134 /* LaunchScreen.storyboard */,
 				110946E01BFA8AC20018A134 /* Info.plist */,
@@ -356,6 +361,7 @@
 				110947101BFA91390018A134 /* PuzzleBrowserTableViewController.m in Sources */,
 				110946D11BFA8AC20018A134 /* AppDelegate.m in Sources */,
 				110946CE1BFA8AC20018A134 /* main.m in Sources */,
+				5BDF76331C096D1000546406 /* SolvingViewController.m in Sources */,
 				119946751BFB869400A5ED30 /* ParseDataManager.m in Sources */,
 				110947041BFA8FAD0018A134 /* GetPhotoViewController.m in Sources */,
 				1109470A1BFA8FF20018A134 /* DetailsAndSubmissionViewController.m in Sources */,

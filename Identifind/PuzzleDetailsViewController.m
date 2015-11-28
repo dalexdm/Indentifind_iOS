@@ -39,6 +39,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)solveButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"toSolve" sender:self];
+}
 
 /*
 #pragma mark - Navigation
