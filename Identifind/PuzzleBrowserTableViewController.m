@@ -59,26 +59,24 @@
 }
 
 -(void)loadPuzzles {
+    NSLog(@"%d", [ParseDataManager sharedManager].filterType);
     PFQuery *query = [PFQuery queryWithClassName:@"Puzzle"];
     switch ([ParseDataManager sharedManager].filterType) {
         case 0:
             [query orderByDescending:@"createdAt"];
             break;
         case 1:
-            [query orderByAscending:@"createdAt"];
+            [query orderByDescending:@"Views"];
             break;
         default:
-            [query orderByDescending:@"createdAt"];
+            [query orderByDescending:@"Difficulty"];
             break;
     }
-    [query orderByDescending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (objects.count != _puzzles.count) {
             self.puzzles = [objects mutableCopy];
+            NSLog(@"%@", [self.puzzles[0] objectForKey:@"Title"]);
             [self.tableView reloadData];
-        }
     }];
-    
 }
 
 #pragma mark - Table view data source
@@ -107,14 +105,19 @@
                                       reuseIdentifier:@"myCell"];
     }
     UILabel *label = (UILabel *)[cell viewWithTag:1];
+    
     //UIImageView *img = (UIImageView *)[cell viewWithTag:2];
     PFObject *currentPuzzle = self.puzzles[indexPath.row];
-    label.text = [currentPuzzle objectForKey:@"Title"];
+    UILabel *lbl = (UILabel *)[cell viewWithTag:1];
+    lbl.text = [currentPuzzle objectForKey:@"Title"];
+    
     //img
     PFImageView *pfimg = (PFImageView *)[cell viewWithTag:2];
     pfimg = (PFImageView *)[cell viewWithTag:2];//[[PFImageView alloc] init];
     pfimg.image = [UIImage imageNamed:@""];
     pfimg.file = (PFFile *)[currentPuzzle objectForKey:@"Image"];
+    
+    
     [pfimg loadInBackground];
 
     //set image
@@ -123,6 +126,7 @@
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"%@", [self.puzzles[0] objectForKey:@"Title"]);
     if ([segue.identifier isEqualToString:@"getDetails"]) {
         PuzzleDetailsViewController *pdvc = (PuzzleDetailsViewController *)segue.destinationViewController;
         //pdvc.puzzle = _selectedPuzzle;

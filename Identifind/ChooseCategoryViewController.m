@@ -7,6 +7,7 @@
 //
 
 #import "ChooseCategoryViewController.h"
+#import "ParseDataManager.h"
 
 @interface ChooseCategoryViewController ()
 
@@ -25,11 +26,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)temporarySegue:(id)sender {
-//go straight to next thing with 'chooseCategory' segue
+- (IBAction)recentPressed:(id)sender {
+    [ParseDataManager sharedManager].filterType = 0;
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
-- (IBAction)tempButtonPressed:(id)sender {
-    [self performSegueWithIdentifier:@"choseCategory" sender:self];
+
+- (IBAction)popularPressed:(id)sender {
+    [ParseDataManager sharedManager].filterType = 1;
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
+}
+
+- (IBAction)difficultPressed:(id)sender {
+    [ParseDataManager sharedManager].filterType = 2;
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
+}
+
+- (IBAction)minePressed:(id)sender {
+    [ParseDataManager sharedManager].filterType = 3;
+    [self dismissViewControllerAnimated:YES completion:^(void){}];
 }
 
 /*
