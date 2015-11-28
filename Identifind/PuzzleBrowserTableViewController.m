@@ -125,7 +125,7 @@
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"getDetails"]) {
         PuzzleDetailsViewController *pdvc = (PuzzleDetailsViewController *)segue.destinationViewController;
-        //pdvc.puzzle = _selectedPuzzle;
+        pdvc.puzzle = _selectedPuzzle;
     }
 }
 

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParseDataManager.h"
 
 @interface PuzzleDetailsViewController : UIViewController
-
+@property PFObject *puzzle;
 @end
