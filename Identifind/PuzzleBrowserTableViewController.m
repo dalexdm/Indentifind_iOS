@@ -104,12 +104,22 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:@"myCell"];
     }
-    UILabel *label = (UILabel *)[cell viewWithTag:1];
     
     //UIImageView *img = (UIImageView *)[cell viewWithTag:2];
     PFObject *currentPuzzle = self.puzzles[indexPath.row];
-    UILabel *lbl = (UILabel *)[cell viewWithTag:1];
+    
+    
+    UILabel *lbl = (UILabel *)[cell viewWithTag:4];
     lbl.text = [currentPuzzle objectForKey:@"Title"];
+    
+    UILabel *usr = (UILabel *)[cell viewWithTag:3];
+    usr.text = [NSString stringWithFormat:@"by %@",[currentPuzzle objectForKey:@"User"]];
+    
+    UILabel *vws = (UILabel *)[cell viewWithTag:5];
+    vws.text = [NSString stringWithFormat:@"Views: %@",[currentPuzzle objectForKey:@"Views"]];
+    
+    UILabel *diff = (UILabel *)[cell viewWithTag:6];
+    diff.text = [NSString stringWithFormat:@"Difficulty: %@",[currentPuzzle objectForKey:@"Difficulty"]];
     
     //img
     PFImageView *pfimg = (PFImageView *)[cell viewWithTag:2];
