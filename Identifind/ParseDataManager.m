@@ -60,7 +60,7 @@
     [puzzle setObject:image forKey:@"Image"];
     [puzzle setObject:[PFUser currentUser].username forKey:@"User"];
     [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Views"];
-    [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Difficulty"];
+    [puzzle setObject:[NSNumber numberWithInt:5] forKey:@"Difficulty"];
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];
     [puzzle saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {

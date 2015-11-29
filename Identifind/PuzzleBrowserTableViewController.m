@@ -118,7 +118,8 @@
     vws.text = [NSString stringWithFormat:@"Views: %@",[currentPuzzle objectForKey:@"Views"]];
     
     UILabel *diff = (UILabel *)[cell viewWithTag:6];
-    diff.text = [NSString stringWithFormat:@"Difficulty: %@",[currentPuzzle objectForKey:@"Difficulty"]];
+    int difVal = [(NSNumber*)[currentPuzzle objectForKey:@"Difficulty"] intValue];
+    diff.text = [NSString stringWithFormat:@"Point Value: %d", difVal];
     
     //img
     PFImageView *pfimg = (PFImageView *)[cell viewWithTag:2];
@@ -140,6 +141,11 @@
         NSNumber *prev = [_selectedPuzzle objectForKey:@"Views"];
         NSNumber *newz = [NSNumber numberWithInt:1 + [prev intValue]];
         [_selectedPuzzle setObject:newz forKey:@"Views"];
+        [_selectedPuzzle saveInBackground];
+        
+        NSNumber *prevD = [_selectedPuzzle objectForKey:@"Difficulty"];
+        NSNumber *newD = [NSNumber numberWithInt:1 + [prevD intValue]];
+        [_selectedPuzzle setObject:newD forKey:@"Difficulty"];
         [_selectedPuzzle saveInBackground];
     }
 }

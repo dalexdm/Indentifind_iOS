@@ -38,7 +38,7 @@
     [self performSegueWithIdentifier:@"solve" sender:self];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"gotPhoto"]) {
+    if ([segue.identifier isEqualToString:@"solve"]) {
         SolveViewController *vc = (SolveViewController *)segue.destinationViewController;
         vc.puzzle = _puzzle;
     }

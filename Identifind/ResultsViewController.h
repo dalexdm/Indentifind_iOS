@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ResultsViewController : UIViewController
-
+@property int points;
+@property float distance;
 @end

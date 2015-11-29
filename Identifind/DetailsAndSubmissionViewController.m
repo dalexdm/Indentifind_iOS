@@ -9,7 +9,7 @@
 #import "DetailsAndSubmissionViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface DetailsAndSubmissionViewController () <UITextViewDelegate,CLLocationManagerDelegate>
+@interface DetailsAndSubmissionViewController () <UITextViewDelegate, UITextFieldDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_cluesField setDelegate:self];
+    [_titleField setDelegate:self];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager requestAlwaysAuthorization];
@@ -59,15 +60,30 @@
     self.longitude = location.coordinate.longitude;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    //deals with undo and paste, may be unnecessary but doesn't seem to mess anything up
+    if(range.length + range.location > textField.text.length)
+    {
+        return NO;
+    }
+    
+    NSUInteger newLen = [textField.text length] + [string length] - range.length;
+    return newLen <= 15;
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     
     if([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
-        [self puzzleCreationFinalized:self];
+        return NO;
+    } else if ([[textView text] length] - range.length + text.length > 50) {
         return NO;
     }
     
     return YES;
+}
+- (IBAction)submitButtonPressed:(id)sender {
+    [self puzzleCreationFinalized:self];
 }
 
 /*

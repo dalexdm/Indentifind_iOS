@@ -9,12 +9,12 @@
 #import "SolveViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "ResultsViewController.h"
 
 @interface SolveViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property float distance;
 @end
 
 @implementation SolveViewController
@@ -64,6 +64,48 @@
     double guessLatitude = guess.latitude;
     double guessLongitude = guess.longitude;
     
+
+    double d1 = puzzleLatitude - guessLatitude;
+    double d2 = puzzleLongitude - guessLongitude;
+    double euDistance = sqrt(pow(d1, 2) + pow(d2, 2));
+    self.distance = euDistance;
+    NSLog(@"%f, %f",puzzleLatitude, puzzleLongitude);
+    if (euDistance <= 1) {
+        [self performSegueWithIdentifier:@"win" sender:self];
+    } else {
+        PFUser *current = [PFUser currentUser];
+        int points = [(NSNumber*)[current objectForKey:@"Points"] intValue] - 1;
+        [current setObject:[NSNumber numberWithInt:points] forKey:@"Points"];
+        [current saveInBackground];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                       message:@"You guessed wrong. You lose a point."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok"
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction * _Nonnull action) {
+                                                                [alert removeFromParentViewController];
+                                                            }];
+        [alert addAction:alertAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"win"]) {
+        ResultsViewController *rvc = (ResultsViewController *)segue.destinationViewController;
+        rvc.distance = self.distance;
+        rvc.points = (int) [(NSNumber*)[self.puzzle objectForKey:@"Difficulty"] integerValue] - 1;
+        int new = fmax(10,[(NSNumber*)[self.puzzle objectForKey:@"Difficulty"] intValue] - 2);
+        [self.puzzle setObject:[NSNumber numberWithInt:new] forKey:@"Difficulty"];
+        [self.puzzle saveInBackground];
+        
+        PFUser *current = [PFUser currentUser];
+        int points = [(NSNumber*)[current objectForKey:@"Points"] intValue] + rvc.points;
+        [current setObject:[NSNumber numberWithInt:points] forKey:@"Points"];
+        [current saveInBackground];
+    }
+                  
 }
 
 /*

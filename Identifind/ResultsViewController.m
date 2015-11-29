@@ -9,6 +9,8 @@
 #import "ResultsViewController.h"
 
 @interface ResultsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end
 
@@ -16,12 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.pointsLabel.text = [NSString stringWithFormat:@"Points received: %d", _points];
+    self.distanceLabel.text = [NSString stringWithFormat:@"Distance from location: %f", _distance];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)returnButton:(id)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 /*
