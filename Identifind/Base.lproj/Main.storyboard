@@ -345,11 +345,11 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cGu-pG-dz9" id="3GZ-DA-pEu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="take_button" translatesAutoresizingMaskIntoConstraints="NO" id="VSW-b7-82N" userLabel="pfimg" customClass="PFImageView">
-                                            <rect key="frame" x="8" y="8" width="102" height="114.5"/>
+                                            <rect key="frame" x="8" y="8" width="102" height="115"/>
                                             <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puzzle_Title(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-3q-ohw">
@@ -465,6 +465,9 @@
                                 <state key="normal" title="Solve It!">
                                     <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="solveButtonPressed:" destination="d1q-b6-ykE" eventType="touchUpInside" id="bNK-tZ-PAI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -506,6 +509,9 @@
                                 <state key="normal" title="Submit Guess!">
                                     <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="7Gz-iU-vcV" eventType="touchUpInside" id="djX-xA-Uf4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap and hold to guess a location!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjS-Cq-Bul">
                                 <rect key="frame" x="10" y="88" width="300" height="28"/>
@@ -519,6 +525,7 @@
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="Ylr-Td-U1n" id="q43-mB-sND"/>
                         <segue destination="8mL-Mh-Ba4" kind="show" identifier="win" id="hdx-Xo-7I5"/>
                     </connections>
                 </viewController>
