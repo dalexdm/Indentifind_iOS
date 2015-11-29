@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [ParseDataManager sharedManager].mainView = self;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -122,7 +123,6 @@
     //img
     PFImageView *pfimg = (PFImageView *)[cell viewWithTag:2];
     pfimg = (PFImageView *)[cell viewWithTag:2];//[[PFImageView alloc] init];
-    pfimg.image = [UIImage imageNamed:@""];
     pfimg.file = (PFFile *)[currentPuzzle objectForKey:@"Image"];
     
     

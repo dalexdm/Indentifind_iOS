@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "PuzzleBrowserTableViewController.h"
 
 @interface ParseDataManager : NSObject
 
 @property (nonatomic) int filterType;
+@property (nonatomic) PuzzleBrowserTableViewController* mainView;
 
 + (ParseDataManager *)sharedManager;
 

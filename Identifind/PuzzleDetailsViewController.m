@@ -30,7 +30,7 @@
     _clueField.text = [_puzzle objectForKey:@"Clues"];
     _userText.text = [_puzzle objectForKey:@"User"];
     NSNumber *num = [_puzzle objectForKey:@"Viewed"];
-    [_puzzle setObject:[NSNumber numberWithInt:[num integerValue] + 1] forKey:@"Viewed"];
+    [_puzzle setObject:[NSNumber numberWithInt:(int) [num integerValue] + 1] forKey:@"Viewed"];
     [_puzzle saveInBackground];
     [pfimg loadInBackground];
 }

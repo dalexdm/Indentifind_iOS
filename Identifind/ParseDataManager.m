@@ -64,8 +64,8 @@
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];
     [puzzle saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (!succeeded)
-            NSLog(@"%@",[error localizedDescription]);
+        if (!succeeded) NSLog(@"%@",[error localizedDescription]);
+        else [self.mainView loadPuzzles];
     }];
 }
 
