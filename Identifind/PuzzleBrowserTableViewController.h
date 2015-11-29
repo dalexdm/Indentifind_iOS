@@ -10,4 +10,6 @@
 
 @interface PuzzleBrowserTableViewController : UITableViewController
 
+-(void)loadPuzzles;
+
 @end
