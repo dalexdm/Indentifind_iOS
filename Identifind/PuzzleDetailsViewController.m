@@ -26,7 +26,6 @@
     _titleText.text = [_puzzle objectForKey:@"Title"];
     //img
     PFImageView *pfimg = _imgView;
-    pfimg.image = [UIImage imageNamed:@""];
     pfimg.file = (PFFile *)[_puzzle objectForKey:@"Image"];
     _clueField.text = [_puzzle objectForKey:@"Clues"];
     _userText.text = [_puzzle objectForKey:@"User"];

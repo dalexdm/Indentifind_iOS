@@ -352,7 +352,7 @@
                                 <rect key="frame" x="0.0" y="92" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cGu-pG-dz9" id="3GZ-DA-pEu">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="take_button" translatesAutoresizingMaskIntoConstraints="NO" id="VSW-b7-82N" userLabel="pfimg" customClass="PFImageView">
