@@ -299,7 +299,7 @@
 				TargetAttributes = {
 					110946C81BFA8AC20018A134 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 2J48MN2Y89;
+						DevelopmentTeam = WN5G92RES3;
 					};
 					110946E41BFA8AC20018A134 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -521,7 +521,7 @@
 				);
 				INFOPLIST_FILE = Identifind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderDM.Identifind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datzLauren.Identifind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -540,7 +540,7 @@
 				);
 				INFOPLIST_FILE = Identifind/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderDM.Identifind;
+				PRODUCT_BUNDLE_IDENTIFIER = com.datzLauren.Identifind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

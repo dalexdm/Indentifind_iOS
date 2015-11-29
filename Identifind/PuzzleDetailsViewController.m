@@ -34,6 +34,9 @@
     [_puzzle saveInBackground];
     [pfimg loadInBackground];
 }
+- (IBAction)solveButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"solve" sender:self];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
