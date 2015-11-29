@@ -56,6 +56,11 @@
 
 
 - (IBAction)submitButtonPressed:(id)sender {
+    //first get the coordinates of the puzzle
+    NSNumber *puzzleLatitude = [_puzzle objectForKey:@"Latitude"];
+    NSNumber *puzzleLongitude = [_puzzle objectForKey:@"Longitude"];
+    //now compare it to the annotation
+    //NSNumber *guessLatitude = _mapView.annotations[0].coordinate;
 }
 
 /*

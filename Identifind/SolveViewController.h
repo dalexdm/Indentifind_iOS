@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ParseDataManager.h"
 
 @interface SolveViewController : UIViewController
+@property PFObject *puzzle;
 
 @end

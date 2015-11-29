@@ -8,6 +8,7 @@
 
 #import "PuzzleDetailsViewController.h"
 #import <ParseUI/ParseUI.h>
+#import "SolveViewController.h"
 
 @interface PuzzleDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleText;
@@ -36,6 +37,12 @@
 }
 - (IBAction)solveButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"solve" sender:self];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"gotPhoto"]) {
+        SolveViewController *vc = (SolveViewController *)segue.destinationViewController;
+        vc.puzzle = _puzzle;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
