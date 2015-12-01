@@ -14,9 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UITextView *cluesField;
-@property (nonatomic) float latitude;
-@property (nonatomic) float longitude;
-
 
 @end
 
@@ -29,9 +26,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
-    _latitude = 0.0f;
-    _longitude = 0.1f;
+    if (_latitude == 0 && _longitude == 0) [self.locationManager startUpdatingLocation];
     
     // Do any additional setup after loading the view.
 }

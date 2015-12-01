@@ -69,7 +69,7 @@
     double d2 = puzzleLongitude - guessLongitude;
     double euDistance = sqrt(pow(d1, 2) + pow(d2, 2));
     self.distance = euDistance;
-    if (euDistance <= 0.2) {
+    if (euDistance <= 0.01) {
         [self performSegueWithIdentifier:@"win" sender:self];
     } else {
         PFUser *current = [PFUser currentUser];
@@ -79,10 +79,12 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!"
                                                                        message:@"You guessed wrong. You lose a point."
                                                                 preferredStyle:UIAlertControllerStyleAlert];
+        if (points <= 0) [alert setMessage:@"You guessed wrong. Now you're out of points!"];
         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok"
                                                               style:UIAlertActionStyleDefault
                                                             handler:^(UIAlertAction * _Nonnull action) {
                                                                 [alert removeFromParentViewController];
+                                                                if (points <= 0) [self.navigationController popToRootViewControllerAnimated:YES];
                                                             }];
         [alert addAction:alertAction];
         [self presentViewController:alert animated:YES completion:nil];

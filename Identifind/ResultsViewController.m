@@ -18,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.hidesBackButton = YES;
     self.pointsLabel.text = [NSString stringWithFormat:@"Points received: %d", _points];
     self.distanceLabel.text = [NSString stringWithFormat:@"Distance from location: %f", _distance];
     // Do any additional setup after loading the view.

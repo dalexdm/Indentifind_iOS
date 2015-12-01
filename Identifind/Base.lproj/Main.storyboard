@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="height" constant="54" id="lhb-fx-tTj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="16"/>
-                                <state key="normal" title="Most Difficult">
+                                <state key="normal" title="Most Valuable">
                                     <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -132,7 +132,6 @@
                                     <color key="titleColor" red="0.54111426770000004" green="0.54111426770000004" blue="0.54111426770000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="difficultPressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="MHj-nS-ZG1"/>
                                     <action selector="minePressed:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="0hk-hV-p9q"/>
                                 </connections>
                             </button>
@@ -377,30 +376,30 @@
                                             <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Puzzle_Title(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggR-3q-ohw">
-                                            <rect key="frame" x="118" y="18" width="182" height="24"/>
+                                            <rect key="frame" x="118" y="28" width="202" height="24"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="19"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="by USER(null)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShB-rM-grv">
-                                            <rect key="frame" x="118" y="43" width="176" height="21"/>
+                                            <rect key="frame" x="118" y="50" width="176" height="21"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Views: ø" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppn-QP-AX3">
-                                            <rect key="frame" x="118" y="94" width="176" height="25"/>
+                                            <rect key="frame" x="118" y="87" width="176" height="25"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="6" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Difficulty: ø" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hg-J6-eec">
                                             <rect key="frame" x="118" y="67" width="182" height="29"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -433,6 +432,9 @@
                             <state key="normal" title="No User Logged In!">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="wannaLogOut:" destination="jIN-ms-PTU" eventType="touchUpInside" id="2Mt-49-2Wj"/>
+                            </connections>
                         </button>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZYl-ax-QEy">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -444,6 +446,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="XAF-8u-71n" id="lht-ct-MXr"/>
+                        <outlet property="titleButton" destination="DcJ-rf-TYJ" id="Wo8-1y-Ma0"/>
                         <segue destination="d1q-b6-ykE" kind="show" identifier="getDetails" id="lqd-ez-t0n"/>
                         <segue destination="9pv-A4-QxB" kind="show" identifier="newPuzzle" id="2Ys-Ot-cWx"/>
                         <segue destination="AXY-mH-vT1" kind="presentation" identifier="signUpSegue" id="VYD-J3-t6b"/>

@@ -30,7 +30,7 @@
     PFImageView *pfimg = _imgView;
     pfimg.file = (PFFile *)[_puzzle objectForKey:@"Image"];
     _clueField.text = [_puzzle objectForKey:@"Clues"];
-    _userText.text = [_puzzle objectForKey:@"User"];
+    _userText.text = [NSString stringWithFormat:@"by %@",[_puzzle objectForKey:@"User"]];
     [pfimg loadInBackground];
     
     //see if the user has viewed this already
@@ -46,6 +46,18 @@
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"solve"]) {
+        if ([(NSNumber *)[[PFUser currentUser] objectForKey:@"Points"] intValue] <= 0) {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Points!"
+                                                                           message:@"Make some puzzles to earn points before attempting to solve!"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Will do!"
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction * _Nonnull action) {
+                                                                    [alert removeFromParentViewController];
+                                                                }];
+            [alert addAction:alertAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
         SolveViewController *vc = (SolveViewController *)segue.destinationViewController;
         vc.puzzle = _puzzle;
     }

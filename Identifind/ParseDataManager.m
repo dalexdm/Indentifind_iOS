@@ -65,7 +65,7 @@
     [puzzle setObject:clues forKey:@"Clues"];
     [puzzle setObject:image forKey:@"Image"];
     [puzzle setObject:[PFUser currentUser].username forKey:@"User"];
-    [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Views"];
+    [puzzle setObject:[NSNumber numberWithInt:1] forKey:@"Views"];
     [puzzle setObject:[NSNumber numberWithInt:3] forKey:@"Difficulty"];
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];

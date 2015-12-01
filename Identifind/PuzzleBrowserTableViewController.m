@@ -16,6 +16,7 @@
 //@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *puzzles;
 @property PFObject *selectedPuzzle;
+@property (weak, nonatomic) IBOutlet UIButton *titleButton;
 
 
 @end
@@ -46,6 +47,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)wannaLogOut:(id)sender {
+    if (![[ParseDataManager sharedManager] isUserLoggedIn]) {
+        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
+        return;
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Log Out"
+                                                                   message:@"Would you like to log out this user?"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *affirmative = [UIAlertAction actionWithTitle:@"Yes"
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * _Nonnull action) {
+                                                            [[ParseDataManager sharedManager] logout];
+                                                            [alert removeFromParentViewController];
+                                                        }];
+    [alert addAction:affirmative];
+    UIAlertAction *negative = [UIAlertAction actionWithTitle:@"No"
+                                                          style:UIAlertActionStyleDefault
+                                                        handler:^(UIAlertAction * _Nonnull action) {
+                                                            [alert removeFromParentViewController];
+                                                        }];
+    [alert addAction:negative];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (IBAction)filterChosen:(id)sender {
 }
 
@@ -58,8 +83,8 @@
 }
 
 -(void)loadPuzzles {
-    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@ Points", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
-    else self.title = @"No user logged in!";
+    if ([[ParseDataManager sharedManager] isUserLoggedIn]) [_titleButton setTitle:[NSString stringWithFormat:@"%@ | %@ Points", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]] forState:UIControlStateNormal];
+    else [_titleButton setTitle:@"No user logged in!" forState:UIControlStateNormal];
     PFQuery *query = [PFQuery queryWithClassName:@"Puzzle"];
     switch ([ParseDataManager sharedManager].filterType) {
         case 0:
@@ -70,8 +95,10 @@
             break;
         case 2:
             [query orderByDescending:@"Difficulty"];
+            break;
         case 3:
             [query whereKey:@"User" equalTo:[PFUser currentUser].username];
+            break;
         default:
             [query orderByDescending:@"createdAt"];
             break;

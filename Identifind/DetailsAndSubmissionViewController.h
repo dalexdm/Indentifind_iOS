@@ -11,5 +11,7 @@
 @interface DetailsAndSubmissionViewController : UIViewController
 
 @property UIImage *image;
+@property (nonatomic) float latitude;
+@property (nonatomic) float longitude;
 
 @end

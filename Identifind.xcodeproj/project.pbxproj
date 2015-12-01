@@ -36,6 +36,8 @@
 		119946701BFB7F7800A5ED30 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1199466F1BFB7F7800A5ED30 /* libz.tbd */; };
 		119946721BFB7F8D00A5ED30 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 119946711BFB7F8D00A5ED30 /* libsqlite3.tbd */; };
 		119946751BFB869400A5ED30 /* ParseDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 119946741BFB869400A5ED30 /* ParseDataManager.m */; };
+		11DDCB7D1C0D4A5A008BC263 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DDCB7C1C0D4A5A008BC263 /* AssetsLibrary.framework */; };
+		11DDCB7F1C0D4D22008BC263 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11DDCB7E1C0D4D22008BC263 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		119946711BFB7F8D00A5ED30 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		119946731BFB869400A5ED30 /* ParseDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseDataManager.h; sourceTree = "<group>"; };
 		119946741BFB869400A5ED30 /* ParseDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseDataManager.m; sourceTree = "<group>"; };
+		11DDCB7C1C0D4A5A008BC263 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		11DDCB7E1C0D4D22008BC263 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11DDCB7F1C0D4D22008BC263 /* Photos.framework in Frameworks */,
+				11DDCB7D1C0D4A5A008BC263 /* AssetsLibrary.framework in Frameworks */,
 				11464C101BFBC3C30053D328 /* CoreLocation.framework in Frameworks */,
 				119946721BFB7F8D00A5ED30 /* libsqlite3.tbd in Frameworks */,
 				119946701BFB7F7800A5ED30 /* libz.tbd in Frameworks */,
@@ -144,6 +150,8 @@
 		110946C01BFA8AC20018A134 = {
 			isa = PBXGroup;
 			children = (
+				11DDCB7E1C0D4D22008BC263 /* Photos.framework */,
+				11DDCB7C1C0D4A5A008BC263 /* AssetsLibrary.framework */,
 				1183AB991BFC3A8A0016E6DF /* ParseUI.framework */,
 				119946711BFB7F8D00A5ED30 /* libsqlite3.tbd */,
 				1199466F1BFB7F7800A5ED30 /* libz.tbd */,
@@ -181,8 +189,8 @@
 				1144EE541C05714000EF42DF /* SignUpViewController.m */,
 				119946731BFB869400A5ED30 /* ParseDataManager.h */,
 				119946741BFB869400A5ED30 /* ParseDataManager.m */,
-				110947121BFAA28D0018A134 /* PuzzleDetailsViewController.m */,
 				110947111BFAA28D0018A134 /* PuzzleDetailsViewController.h */,
+				110947121BFAA28D0018A134 /* PuzzleDetailsViewController.m */,
 				110947021BFA8FAD0018A134 /* GetPhotoViewController.h */,
 				110947031BFA8FAD0018A134 /* GetPhotoViewController.m */,
 				110947081BFA8FF20018A134 /* DetailsAndSubmissionViewController.h */,

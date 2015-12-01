@@ -9,11 +9,15 @@
 #import "GetPhotoViewController.h"
 #import "DetailsAndSubmissionViewController.h"
 #import <Parse/Parse.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 
 @interface GetPhotoViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong,nonatomic)UIImage *image;
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (nonatomic) float longitude;
+@property (nonatomic) float latitude;
 @end
 
 @implementation GetPhotoViewController
@@ -59,16 +63,24 @@
     self.imageView.image = image;
     _image = image;
     _continueButton.hidden = NO;
-    //do whatever else we want to do. segue???
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    NSArray<NSURL*> *urls = [NSArray arrayWithObject:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    PHFetchResult *fetch = [PHAsset fetchAssetsWithALAssetURLs:urls options:nil];
+    PHAsset *asset;
+    if (fetch != nil) asset = fetch.firstObject;
+    if (asset.location != nil) {
+        _longitude = asset.location.coordinate.longitude;
+        _latitude = asset.location.coordinate.latitude;
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [picker dismissViewControllerAnimated:YES completion:nil];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                   message:@"You did not select an image"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                   message:@"You did not select an image."
                                                             preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Ok"
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Sorry!"
                                                           style:UIAlertActionStyleDefault
                                                         handler:^(UIAlertAction * _Nonnull action) {
                                                             [alert removeFromParentViewController];
@@ -81,6 +93,8 @@
     if ([segue.identifier isEqualToString:@"gotPhoto"]) {
         DetailsAndSubmissionViewController *vc = (DetailsAndSubmissionViewController *)segue.destinationViewController;
         vc.image = _image;
+        vc.longitude = _longitude;
+        vc.latitude = _latitude;
     }
 }
 
