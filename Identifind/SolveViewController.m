@@ -69,8 +69,7 @@
     double d2 = puzzleLongitude - guessLongitude;
     double euDistance = sqrt(pow(d1, 2) + pow(d2, 2));
     self.distance = euDistance;
-    NSLog(@"%f, %f",puzzleLatitude, puzzleLongitude);
-    if (euDistance <= 1) {
+    if (euDistance <= 0.2) {
         [self performSegueWithIdentifier:@"win" sender:self];
     } else {
         PFUser *current = [PFUser currentUser];
@@ -93,17 +92,23 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"win"]) {
+        
+        //ascertain and update puzzle difficulty
         ResultsViewController *rvc = (ResultsViewController *)segue.destinationViewController;
         rvc.distance = self.distance;
         rvc.points = (int) [(NSNumber*)[self.puzzle objectForKey:@"Difficulty"] integerValue] - 1;
-        int new = fmax(10,[(NSNumber*)[self.puzzle objectForKey:@"Difficulty"] intValue] - 2);
+        int new = fmax(3,[(NSNumber*)[self.puzzle objectForKey:@"Difficulty"] intValue] / 2);
         [self.puzzle setObject:[NSNumber numberWithInt:new] forKey:@"Difficulty"];
         [self.puzzle saveInBackground];
         
+        //assign points accordingly
         PFUser *current = [PFUser currentUser];
         int points = [(NSNumber*)[current objectForKey:@"Points"] intValue] + rvc.points;
         [current setObject:[NSNumber numberWithInt:points] forKey:@"Points"];
         [current saveInBackground];
+        
+        [_puzzle addObject:[PFUser currentUser].username forKey:@"UsersSolved"];
+        [_puzzle saveInBackground];
     }
                   
 }

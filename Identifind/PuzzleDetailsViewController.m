@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *imgView;
 @property (weak, nonatomic) IBOutlet UITextView *clueField;
 @property (weak, nonatomic) IBOutlet UILabel *userText;
+@property (weak, nonatomic) IBOutlet UIButton *solveButton;
 
 @end
 
@@ -24,15 +25,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _titleText.text = [_puzzle objectForKey:@"Title"];
+    
     //img
     PFImageView *pfimg = _imgView;
     pfimg.file = (PFFile *)[_puzzle objectForKey:@"Image"];
     _clueField.text = [_puzzle objectForKey:@"Clues"];
     _userText.text = [_puzzle objectForKey:@"User"];
-    NSNumber *num = [_puzzle objectForKey:@"Viewed"];
-    [_puzzle setObject:[NSNumber numberWithInt:(int) [num integerValue] + 1] forKey:@"Viewed"];
-    [_puzzle saveInBackground];
     [pfimg loadInBackground];
+    
+    //see if the user has viewed this already
+    NSArray *solverArray = (NSArray *) [_puzzle objectForKey:@"UsersSolved"];
+    //if so, go ahead and increment views. Then add user to viewed List
+    if ([solverArray containsObject:[PFUser currentUser].username]) {
+        _solveButton.enabled = false;
+        [_solveButton setTitle:@"Already Solved!" forState:UIControlStateNormal];
+    }
 }
 - (IBAction)solveButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"solve" sender:self];

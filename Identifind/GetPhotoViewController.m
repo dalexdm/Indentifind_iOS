@@ -52,7 +52,9 @@
         [self presentViewController:controller animated:YES completion:nil];
     }
 }
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
     _image = image;

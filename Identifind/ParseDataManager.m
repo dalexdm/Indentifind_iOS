@@ -33,7 +33,6 @@
     
     PFUser *newUser = [PFUser user];
     newUser.username = username;
-    newUser.email = email;
     newUser.password = password;
     [newUser setObject:[NSNumber numberWithInt:0] forKey:@"Points"];
     //check if signup was a success
@@ -43,7 +42,14 @@
         } else {
             //if so log our user in
             [PFUser logInWithUsername:newUser.username password:newUser.password];
+            [_mainView loadPuzzles];
         }
+    }];
+}
+
+- (void) logout {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        [_mainView loadPuzzles];
     }];
 }
 
@@ -60,9 +66,11 @@
     [puzzle setObject:image forKey:@"Image"];
     [puzzle setObject:[PFUser currentUser].username forKey:@"User"];
     [puzzle setObject:[NSNumber numberWithInt:0] forKey:@"Views"];
-    [puzzle setObject:[NSNumber numberWithInt:5] forKey:@"Difficulty"];
+    [puzzle setObject:[NSNumber numberWithInt:3] forKey:@"Difficulty"];
     [puzzle setObject:[NSNumber numberWithFloat:latitude] forKey:@"Latitude"];
     [puzzle setObject:[NSNumber numberWithFloat:longitude] forKey:@"Longitude"];
+    [puzzle addObject:[PFUser currentUser].username forKey:@"UsersViews"];
+    [puzzle addObject:[PFUser currentUser].username forKey:@"UsersSolved"];
     [puzzle saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (!succeeded) NSLog(@"%@",[error localizedDescription]);
         else [self.mainView loadPuzzles];

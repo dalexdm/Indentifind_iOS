@@ -23,6 +23,8 @@
       withEmail:(NSString*)email
    withPassword:(NSString*)password;
 
+- (void) logout;
+
 - (void) postImage:(PFFile *)image
           fromUser:(NSString*)user
          withTitle:(NSString*)title

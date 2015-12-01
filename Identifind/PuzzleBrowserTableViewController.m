@@ -39,8 +39,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self loadPuzzles];
-    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@ Points", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
-    else self.title = @"No user logged in!";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +58,8 @@
 }
 
 -(void)loadPuzzles {
+    if ([[ParseDataManager sharedManager] isUserLoggedIn]) self.title = [NSString stringWithFormat:@"%@ | %@ Points", [PFUser currentUser].username, [[PFUser currentUser] objectForKey:@"Points"]];
+    else self.title = @"No user logged in!";
     PFQuery *query = [PFQuery queryWithClassName:@"Puzzle"];
     switch ([ParseDataManager sharedManager].filterType) {
         case 0:
@@ -68,8 +68,12 @@
         case 1:
             [query orderByDescending:@"Views"];
             break;
-        default:
+        case 2:
             [query orderByDescending:@"Difficulty"];
+        case 3:
+            [query whereKey:@"User" equalTo:[PFUser currentUser].username];
+        default:
+            [query orderByDescending:@"createdAt"];
             break;
     }
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -136,17 +140,26 @@
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"getDetails"]) {
+        
         PuzzleDetailsViewController *pdvc = (PuzzleDetailsViewController *)segue.destinationViewController;
         pdvc.puzzle = _selectedPuzzle;
-        NSNumber *prev = [_selectedPuzzle objectForKey:@"Views"];
-        NSNumber *newz = [NSNumber numberWithInt:1 + [prev intValue]];
-        [_selectedPuzzle setObject:newz forKey:@"Views"];
-        [_selectedPuzzle saveInBackground];
         
-        NSNumber *prevD = [_selectedPuzzle objectForKey:@"Difficulty"];
-        NSNumber *newD = [NSNumber numberWithInt:1 + [prevD intValue]];
-        [_selectedPuzzle setObject:newD forKey:@"Difficulty"];
-        [_selectedPuzzle saveInBackground];
+        //see if the user has viewed this already
+        NSArray *viewerArray = (NSArray *) [_selectedPuzzle objectForKey:@"UsersViews"];
+        //if so, go ahead and increment views. Then add user to viewed List
+        if (![viewerArray containsObject:[PFUser currentUser].username]) {
+            NSNumber *prev = [_selectedPuzzle objectForKey:@"Views"];
+            NSNumber *newz = [NSNumber numberWithInt:1 + [prev intValue]];
+            [_selectedPuzzle setObject:newz forKey:@"Views"];
+            [_selectedPuzzle saveInBackground];
+            
+            NSNumber *prevD = [_selectedPuzzle objectForKey:@"Difficulty"];
+            NSNumber *newD = [NSNumber numberWithInt:1 + [prevD intValue]];
+            [_selectedPuzzle setObject:newD forKey:@"Difficulty"];
+            
+            [_selectedPuzzle addObject:[PFUser currentUser].username forKey:@"UsersViews"];
+            [_selectedPuzzle saveInBackground];
+        }
     }
 }
 

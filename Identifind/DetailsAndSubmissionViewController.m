@@ -68,7 +68,7 @@
     }
     
     NSUInteger newLen = [textField.text length] + [string length] - range.length;
-    return newLen <= 15;
+    return newLen <= 25;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -76,7 +76,7 @@
     if([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
         return NO;
-    } else if ([[textView text] length] - range.length + text.length > 50) {
+    } else if ([[textView text] length] - range.length + text.length > 140) {
         return NO;
     }
     
