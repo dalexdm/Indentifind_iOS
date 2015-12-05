@@ -65,10 +65,11 @@
     _continueButton.hidden = NO;
     [picker dismissViewControllerAnimated:YES completion:nil];
     
-    NSArray<NSURL*> *urls = [NSArray arrayWithObject:[info objectForKey:UIImagePickerControllerReferenceURL]];
+    NSURL *url = [info objectForKey:UIImagePickerControllerReferenceURL];
+    if (url == nil) return;
+    NSArray<NSURL*> *urls = [NSArray arrayWithObject:url];
     PHFetchResult *fetch = [PHAsset fetchAssetsWithALAssetURLs:urls options:nil];
-    PHAsset *asset;
-    if (fetch != nil) asset = fetch.firstObject;
+    PHAsset *asset = fetch.firstObject;
     if (asset.location != nil) {
         _longitude = asset.location.coordinate.longitude;
         _latitude = asset.location.coordinate.latitude;

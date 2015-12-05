@@ -72,6 +72,11 @@
     if (euDistance <= 0.01) {
         [self performSegueWithIdentifier:@"win" sender:self];
     } else {
+        
+        int newDif = [(NSNumber*)_puzzle[@"Difficulty"] intValue] + 1;
+        [_puzzle setObject:[NSNumber numberWithInt:newDif] forKey:@"Dificulty"];
+        [_puzzle saveInBackground];
+        
         PFUser *current = [PFUser currentUser];
         int points = [(NSNumber*)[current objectForKey:@"Points"] intValue] - 1;
         [current setObject:[NSNumber numberWithInt:points] forKey:@"Points"];

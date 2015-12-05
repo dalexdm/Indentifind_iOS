@@ -486,7 +486,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Here's my clue: You can put me in a bottle but not in your hat; where am I?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ka9-6e-6w8">
                                 <rect key="frame" x="16" y="403" width="288" height="108"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration">
